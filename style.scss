@@ -50,7 +50,9 @@ header {
   height: 40vh;
   width: 450px;
   border: 2px solid black;
+  border-radius: 20px;
   margin: 20px auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px; /* spacing between rows */
@@ -66,7 +68,7 @@ header {
   button {
     flex: 1;
     padding: 15px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     background-color: #6e7683;
     color: #fff;
     border: none;
