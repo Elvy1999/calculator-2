@@ -34,9 +34,12 @@ header {
   gap: 20px;
 }
 .screen #input {
-  margin-right: 10px;
   font-weight: bold;
   font-size: 20px;
+  text-align: right;
+  border-bottom: none;
+  width: 59.5vh;
+  overflow: hidden;
 }
 .screen #result {
   margin-right: 10px;
@@ -61,6 +64,10 @@ header {
 .buttons .row4 {
   display: flex;
   gap: 10px;
+}
+.buttons .row5 {
+  display: flex;
+  flex: 1;
 }
 .buttons button {
   flex: 1;

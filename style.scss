@@ -34,9 +34,12 @@ header {
   gap: 20px;
 
   #input {
-    margin-right: 10px;
     font-weight: bold;
     font-size: 20px;
+    text-align: right;
+    border-bottom: none;
+    width: 59.5vh;
+    overflow: hidden;
   }
 
   #result {
@@ -63,6 +66,10 @@ header {
   .row4 {
     display: flex;
     gap: 10px;
+  }
+  .row5 {
+    display: flex;
+    flex: 1;
   }
 
   button {
