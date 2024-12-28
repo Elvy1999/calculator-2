@@ -42,3 +42,32 @@ clear.addEventListener("click", () => {
   input.innerHTML = "";
   result.innerHTML = "";
 });
+
+buttonDivide.addEventListener("click", () => {
+  input.innerHTML += "/";
+});
+buttonMultiply.addEventListener("click", () => {
+  input.innerHTML += "*";
+});
+buttonMinus.addEventListener("click", () => {
+  input.innerHTML += "-";
+});
+buttonPlus.addEventListener("click", () => {
+  input.innerHTML += "+";
+});
+
+buttonEquals.addEventListener("click", () => {
+  let num1 = "";
+  let num2 = "";
+  let operator = "";
+  let text = input.innerHTML;
+  for (let i = 0; i < text.length; i++) {
+    if (["/", "*", "+", "-"].includes(text.charAt(i))) operator = text.charAt(i);
+    else if (operator == "") num1 += text.charAt(i);
+    else if (operator != "") num2 += text.charAt(i);
+  }
+  num1 = parseInt(num1, 10);
+  num2 = parseInt(num2, 10);
+  let operationResult = operate(num1, num2, operator);
+  result.innerHTML = operationResult;
+});
