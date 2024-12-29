@@ -57,17 +57,14 @@ buttonPlus.addEventListener("click", () => {
 });
 
 buttonEquals.addEventListener("click", () => {
-  let num1 = "";
-  let num2 = "";
-  let operator = "";
-  let text = input.innerHTML;
-  for (let i = 0; i < text.length; i++) {
-    if (["/", "*", "+", "-"].includes(text.charAt(i))) operator = text.charAt(i);
-    else if (operator == "") num1 += text.charAt(i);
-    else if (operator != "") num2 += text.charAt(i);
+  const text = document.getElementById("input").innerHTML;
+  let tokens = text.split(/([+\-*/])/);
+  tokens = tokens.map((token) => token.trim()).filter((token) => token !== "");
+  let currentValue = parseFloat(tokens[0]);
+  for (let i = 1; i < tokens.length; i += 2) {
+    let op = tokens[i];
+    let nextValue = parseFloat(tokens[i + 1]);
+    currentValue = operate(currentValue, nextValue, op);
   }
-  num1 = parseInt(num1, 10);
-  num2 = parseInt(num2, 10);
-  let operationResult = operate(num1, num2, operator);
-  result.innerHTML = operationResult;
+  result.innerHTML = currentValue;
 });
